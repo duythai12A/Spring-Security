@@ -5,18 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @ToString
 @Entity
-@Table(name = "EMPLOYEE")
-public class employee {
+@Table(name = "CUSTOMER")
+public class customer {
     @Id
     @Column(name = "idemp")
     private int idEmp;
@@ -26,4 +23,9 @@ public class employee {
     private String address;
     @Column(name = "phone")
     private int phone;
+    @Column(name = "username")
+    private String userName;
+    @OneToOne(targetEntity = account.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "username",referencedColumnName = "username", insertable=false, updatable=false)
+    private account account;
 }

@@ -1,7 +1,7 @@
 package com.example.springsecuritydemo.repository;
 
-import com.example.springsecuritydemo.entity.employee;
+import com.example.springsecuritydemo.entity.customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EmployeeRepository extends JpaRepository<employee,Integer> {
+public interface CustomerRepository extends JpaRepository<customer,Integer> {
 }
